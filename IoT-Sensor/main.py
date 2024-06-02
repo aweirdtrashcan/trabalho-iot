@@ -31,6 +31,7 @@ def connect_wifi():
         print(station.ifconfig())
 
 def post_beat(beat):
+    #ip local do servidor
     urequests.post(url = 'http://192.168.15.108:8080/bpm', headers = {'content-type': 'application/json'}, data = str(beat))
 
 def calculate_bpm(t):
@@ -47,7 +48,7 @@ while True:
     v = adc.read()
     #print(v)
 
-    sleep(0.2)
+    #sleep(0.2)
 
     history.append(v)
 
